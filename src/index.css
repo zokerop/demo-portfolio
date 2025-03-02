@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.itemConatiner {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 5px;
+
+    & span {
+        font-weight: 100;
+        font-size: 24px;
+    }
+}
+
+.right {
+
+    & .hamburger {
+        width: 32px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        & span {
+            width: 100%;
+            height: 3px;
+            background-color: black;
+            transform-origin: left;
+            transition: all 1s linear;
+
+        }
+    }
+
+}
+
+.topBar {
+    &.active {
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+
+        & .hamburger {
+            span {
+                &:nth-child(1) {
+                    background-color: #fff;
+                    transform: rotate(45deg);
+
+                }
+
+                &:nth-child(3) {
+                    background-color: red;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.menu {
+    transition: all 1s ease;
+
+    &.active {
+        right: 0;
+    }
+}
+
+.menu {
+    & ul {
+        width: 60%;
+
+        & li {
+            margin-bottom: 20px;
+
+            & a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.custom {
+    background: linear-gradient(76deg, rgba(0, 212, 255, 1) 0%, rgba(68, 38, 12, 1) 0%, rgba(14, 11, 65, 1) 0%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+}
+
+.right-intro {
+    & img {
+        animation: updown 2s linear infinite;
+    }
+}
+
+
+.list-port {
+    font-size: 15px;
+    margin-right: 50px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &.active {
+        background-color: black;
+        color: #fff;
+    }
+
+}
+
+.item-port {
+    width: 220px;
+    height: 150px;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    & h3 {
+        position: absolute;
+        font-size: 12px;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        object-fit: cover;
+    }
+
+    &:hover {
+        background-color: rgb(33, 12, 34);
+
+        img {
+            opacity: 0.2;
+            z-index: 0;
+        }
+    }
+}
+.slider{
+    transition: all 0.5s ease;
+}
+@keyframes updown {
+    to {
+        opacity: 0;
+    }
+
+}

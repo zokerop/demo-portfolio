@@ -1,0 +1,25 @@
+.sec {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0px;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+    top: 70px;
+    background-color: gray;
+ 
+}
+
+::-webkit-scrollbar {
+    display: none;
+
+}
+
+
+.sec>* {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    scroll-snap-align: start;
+
+}
